@@ -11,13 +11,20 @@ import duke from './images/duke.jpg';
 function App() {
   const dogs=App.defaultProps.dogs;
 
+  // function get a dog name and returns an object with dog details
+  function getDogInfo(dogName) {
+    const result = dogs.filter(dog => dog.name === dogName);
+    if (result.length === 0) return null 
+    else  return result[0]; 
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
         <Nav dogNames={dogs.map(dog => (dog.name))} />
         <Switch>
           <Route exact path="/dogs/:name" >
-              <DogDetails /> // what props will this need?
+              <DogDetails getDogInfo={getDogInfo} /> 
           </Route>
           <Route exact path="/dogs" >
               <DogList dogs={dogs} /> 

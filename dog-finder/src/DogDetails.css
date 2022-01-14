@@ -1,0 +1,17 @@
+.DogDetails-card {
+    margin: 0 auto;
+    width: 400px;
+    border: 2px solid grey;
+    margin-top: 2em;
+    text-align: left;
+    background-color: moccasin;
+}
+
+.DogDetails-img {
+    width: 400px;
+}
+
+.DogDetails-container {
+    padding: 0.5em 1.3em;
+    padding-top: 0;
+}

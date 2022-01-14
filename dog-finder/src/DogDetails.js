@@ -1,19 +1,26 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from "react-router-dom";
+import './DogDetails.css';
 
-function DogDetails({ getDogDetails }) {
-  const { name } = useParams();
-  const [dog, setDog] = useState(null);
+function DogDetails({getDogInfo}) {
+    const { name } = useParams();
+    const dog = getDogInfo(name);
 
-//   useEffect(function getDog() {
-//     let dogDetails = getDogDetails();
-//     dogDetails ? setDog(dogDetails) : null;
-//   }, [dog]);
+    const history = useHistory();
+    if (!dog) {
+        history.push('/dogs/');
+        return null};
 
   return (
-    <div>
-      <h1>All about { name }: </h1>
-    </div>
+        <div className="DogDetails-card">
+            <img className="DogDetails-img" src={dog.src} alt={`${dog.name} photo`} />
+            <div className="DogDetails-container">
+                <h2>{dog.name} </h2>
+                <ul>
+                    <li>Age: {dog.age} years</li> 
+                    {dog.facts.map((fact,ind) => <li key={ind}>{fact}</li>)}
+                </ul>
+            </div>
+        </div>        
   );
 }
 

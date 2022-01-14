@@ -1,0 +1,13 @@
+.DogList-img {
+    width: 300px;
+    display: block;
+}
+
+.DogList-table {
+    margin: 0 auto;
+}
+
+.DogList-table td {
+    padding: 1em;
+}
+

@@ -4,7 +4,7 @@ import './DogList.css'
 function DogList({dogs}) {
   return (
     <div>
-      <h1>All Our Dogs</h1>
+      <h1>Welcome to the Dog Finder!</h1>
       <table className="DogList-table">
         <tbody>
           <tr>
@@ -12,7 +12,7 @@ function DogList({dogs}) {
               <td key={ind}>
                 <div className="DogList-container">
                   <img className="DogList-img" src={dog.src} alt={dog.name}></img>
-                  <h3><Link className="DogList-link" to={`dogs/${dog.name}`}> <b>{dog.name}</b></Link></h3>                  
+                  <h3><Link className="DogList-link" to={`/dogs/${dog.name}`}> <b>{dog.name}</b></Link></h3>                  
                 </div>
               </td>
               ))}        

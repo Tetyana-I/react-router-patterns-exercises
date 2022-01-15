@@ -1,0 +1,23 @@
+.Nav {
+    background-color: black;
+    color: white;
+    padding: 0.2em;
+}
+
+.Nav a {
+    padding: 0.5em 0;
+    width: 10em;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: large;
+  }
+  
+.Nav a:hover {
+    text-decoration: underline;
+}
+
+.Nav a.active {
+    font-weight: bold;
+    color: lightpink;
+}

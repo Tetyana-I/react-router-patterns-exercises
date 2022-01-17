@@ -1,36 +1,19 @@
 import './App.css';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
 import Nav from './Nav';
-import DogList from "./DogList";
-import DogDetails from "./DogDetails";
 import whiskey from './images/whiskey.jpg';
 import perry from './images/perry.jpg';
 import tubby from './images/tubby.jpg';
 import duke from './images/duke.jpg';
 
-function App() {
-  const dogs=App.defaultProps.dogs;
-
-  // function get a dog name and returns an object with dog details
-  function getDogInfo(dogName) {
-    const result = dogs.filter(dog => dog.name === dogName);
-    if (result.length === 0) return null 
-    else  return result[0]; 
-  }
+function App({ dogs }) {
 
   return (
     <div className="App">
       <BrowserRouter>
         <Nav dogNames={dogs.map(dog => (dog.name))} />
-        <Switch>
-          <Route exact path="/dogs/:name" >
-              <DogDetails getDogInfo={getDogInfo} /> 
-          </Route>
-          <Route exact path="/dogs" >
-              <DogList dogs={dogs} /> 
-          </Route>
-          <Redirect to="/dogs" />
-        </Switch> 
+        <Routes dogs={dogs}/>
       </BrowserRouter>
     </div>
   );

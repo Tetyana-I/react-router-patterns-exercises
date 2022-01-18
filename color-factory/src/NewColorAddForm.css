@@ -1,4 +1,10 @@
 .NewColorAddForm button {
     margin: 1.5em;
     margin-top: 0;
+    padding: 0.5em 1.5em;
+}
+
+.NewColorAddForm input {
+    margin-right: 2em;
+    margin-left: 0.5em;
 }
